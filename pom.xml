@@ -14,8 +14,28 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+    </dependency>
   </dependencies>
-  <build>
+  <build>  
     <finalName>TestGitMavenWeb</finalName>
-  </build>
+      <plugins>  
+          <!-- 解决update project jdk默认版本为1.5 -->
+          <plugin>  
+              <groupId>org.apache.maven.plugins</groupId>  
+              <artifactId>maven-compiler-plugin</artifactId>  
+              <configuration>  
+                  <source>1.7</source>  
+                  <target>1.7</target>  
+              </configuration>   
+          </plugin> 
+          <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+          </plugin>
+      </plugins>  
+  </build>  
 </project>
